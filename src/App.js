@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import Button from 'antd/lib/button';
+// import 'antd/dist/antd.css'
+
+import {Button} from 'antd';
+
 
 // 函数组件，必须传入props
 function Welcome(props) {
@@ -84,6 +89,8 @@ export default class App extends Component {
         <Welcome name="Haijing"></Welcome>
         {/* 使用状态 */}
         <p>{this.state.date.toLocaleTimeString()}</p>
+
+        <Button type="primary">Primary</Button>
       </div>
     )
   }
