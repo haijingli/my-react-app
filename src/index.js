@@ -5,6 +5,8 @@ import Lifecycle from './Lifecycle';
 import CartSample from './CartSample';
 import CommentList from './components/CommentList';
 import Composition from './components/Composition';
+import Hoc from './components/Hoc';
+import ContextSample from './components/ContextSample';
 
 
 //ReactDOM.render方法会替换之前的内容
@@ -14,7 +16,9 @@ import Composition from './components/Composition';
 //  ReactDOM.render(<CartSample title="我的商品列表"/>,document.querySelector('#root'));
 
 // ReactDOM.render(<CommentList />,document.querySelector('#root'));
-ReactDOM.render(<Composition />,document.querySelector('#root'));
+// ReactDOM.render(<Composition />,document.querySelector('#root'));
+// ReactDOM.render(<Hoc contents="My fist Blog!"/>,document.querySelector('#root'));
+ReactDOM.render(<ContextSample/>,document.querySelector('#root'));
 
 // React 只会更新必要的部分
 // 值得注意的是 React DOM 首先会比较元素内容先后的不同，而在渲染过程中只会更新改变了的部分。
