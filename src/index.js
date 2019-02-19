@@ -7,6 +7,8 @@ import CommentList from './components/CommentList';
 import Composition from './components/Composition';
 import Hoc from './components/Hoc';
 import ContextSample from './components/ContextSample';
+import AntdForm from './components/AntdForm';
+import KFormSample from './components/KFormSample';
 
 
 //ReactDOM.render方法会替换之前的内容
@@ -18,7 +20,9 @@ import ContextSample from './components/ContextSample';
 // ReactDOM.render(<CommentList />,document.querySelector('#root'));
 // ReactDOM.render(<Composition />,document.querySelector('#root'));
 // ReactDOM.render(<Hoc contents="My fist Blog!"/>,document.querySelector('#root'));
-ReactDOM.render(<ContextSample/>,document.querySelector('#root'));
+// ReactDOM.render(<ContextSample/>,document.querySelector('#root'));
+// ReactDOM.render(<AntdForm/>,document.querySelector('#root'));
+ReactDOM.render(<KFormSample/>,document.querySelector('#root'));
 
 // React 只会更新必要的部分
 // 值得注意的是 React DOM 首先会比较元素内容先后的不同，而在渲染过程中只会更新改变了的部分。
