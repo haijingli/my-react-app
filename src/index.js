@@ -11,6 +11,7 @@ import AntdForm from './components/AntdForm';
 import KFormSample from './components/KFormSample';
 import store from './store';
 import ReduxTest from './components/ReduxTest';
+import {Provider} from 'react-redux'
 
 
 //ReactDOM.render方法会替换之前的内容
@@ -35,9 +36,19 @@ import ReduxTest from './components/ReduxTest';
 
 // setInterval(tick, 1000);
 
-function render(){
-    ReactDOM.render(<ReduxTest/>,document.querySelector('#root'));
-}
 
-render();
-store.subscribe(render);
+ReactDOM.render(
+    <Provider store={store}>
+        <ReduxTest />
+    </Provider>
+    ,
+    document.querySelector('#root')
+);
+
+//集成react-redux之前的写法，store的state更新时，通过订阅方式通知组件重新渲染
+// function render() {
+//     ReactDOM.render(<ReduxTest />, document.querySelector('#root'));
+// }
+
+// render();
+// store.subscribe(render);
