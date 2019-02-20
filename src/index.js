@@ -9,6 +9,8 @@ import Hoc from './components/Hoc';
 import ContextSample from './components/ContextSample';
 import AntdForm from './components/AntdForm';
 import KFormSample from './components/KFormSample';
+import store from './store';
+import ReduxTest from './components/ReduxTest';
 
 
 //ReactDOM.render方法会替换之前的内容
@@ -22,7 +24,7 @@ import KFormSample from './components/KFormSample';
 // ReactDOM.render(<Hoc contents="My fist Blog!"/>,document.querySelector('#root'));
 // ReactDOM.render(<ContextSample/>,document.querySelector('#root'));
 // ReactDOM.render(<AntdForm/>,document.querySelector('#root'));
-ReactDOM.render(<KFormSample/>,document.querySelector('#root'));
+// ReactDOM.render(<KFormSample/>,document.querySelector('#root'));
 
 // React 只会更新必要的部分
 // 值得注意的是 React DOM 首先会比较元素内容先后的不同，而在渲染过程中只会更新改变了的部分。
@@ -32,3 +34,10 @@ ReactDOM.render(<KFormSample/>,document.querySelector('#root'));
 // }
 
 // setInterval(tick, 1000);
+
+function render(){
+    ReactDOM.render(<ReduxTest/>,document.querySelector('#root'));
+}
+
+render();
+store.subscribe(render);
