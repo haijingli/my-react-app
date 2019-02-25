@@ -12,6 +12,7 @@ import KFormSample from './components/KFormSample';
 import store from './store';
 import ReduxTest from './components/ReduxTest';
 import {Provider} from 'react-redux'
+import RouteSample from './components/RouteSample';
 
 
 //ReactDOM.render方法会替换之前的内容
@@ -37,13 +38,13 @@ import {Provider} from 'react-redux'
 // setInterval(tick, 1000);
 
 
-ReactDOM.render(
-    <Provider store={store}>
-        <ReduxTest />
-    </Provider>
-    ,
-    document.querySelector('#root')
-);
+// ReactDOM.render(
+//     <Provider store={store}>
+//         <ReduxTest />
+//     </Provider>
+//     ,
+//     document.querySelector('#root')
+// );
 
 //集成react-redux之前的写法，store的state更新时，通过订阅方式通知组件重新渲染
 // function render() {
@@ -52,3 +53,5 @@ ReactDOM.render(
 
 // render();
 // store.subscribe(render);
+
+ReactDOM.render(<RouteSample/>,document.querySelector('#root'));

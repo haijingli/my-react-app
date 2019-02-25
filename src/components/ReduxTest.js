@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import store from '../store'
 
 import { connect } from 'react-redux'
+import {add,minus,asyncAdd} from '../store/counter.redux'
 
 // export default class ReduxTest extends Component {
 //   render() {
@@ -27,21 +28,32 @@ import { connect } from 'react-redux'
 //     }, 1000);
 //   }
 // });
+// @connect(mapStateToProps, mapDispatchToProps)
 
+// @connect(
+//   state => ({ num: state }), // 状态映射
+//   {
+//     add: () => ({ type: "add" }),
+//     minus: () => ({ type: "minus" }),
+//     asyncAdd: () => (dispatch) => {
+//       //模拟异步操作，redux-thunk中间件对函数返回值还是函数的请求进行异步处理
+//       setTimeout(() => {
+//         dispatch({ type: "add" })
+//       }, 1000);
+//     }
+//   }
+// )
+
+//模块重构后的写法
 @connect(
-  state => ({ num: state }), // 状态映射
+  // state => ({ num: state }), // 状态映射,没用combineReducers之前
+  state => ({ num: state.counter }), // 状态映射用combineReducers之后需要命名空间
   {
-    add: () => ({ type: "add" }),
-    minus: () => ({ type: "minus" }),
-    asyncAdd: () => (dispatch) => {
-      //模拟异步操作，redux-thunk中间件对函数返回值还是函数的请求进行异步处理
-      setTimeout(() => {
-        dispatch({ type: "add" })
-      }, 1000);
-    }
+    add,
+    minus,
+    asyncAdd
   }
 )
-// @connect(mapStateToProps, mapDispatchToProps)
 class ReduxTest extends Component {
   render() {
     return (
