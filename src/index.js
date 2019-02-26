@@ -14,6 +14,9 @@ import ReduxTest from './components/ReduxTest';
 import {Provider} from 'react-redux'
 import RouteSample from './components/RouteSample';
 
+import myStore from './store/myStore'
+import MyReduxTest from './components/MyReduxTest'
+
 
 //ReactDOM.render方法会替换之前的内容
 // ReactDOM.render(<h1>Hello World</h1>,document.querySelector("#root"));
@@ -54,4 +57,12 @@ import RouteSample from './components/RouteSample';
 // render();
 // store.subscribe(render);
 
-ReactDOM.render(<RouteSample/>,document.querySelector('#root'));
+// ReactDOM.render(<RouteSample/>,document.querySelector('#root'));
+
+// 使用自己创建的store存储和管理数据
+function render() {
+    ReactDOM.render(<MyReduxTest />, document.querySelector('#root'));
+}
+
+render();
+myStore.subscribe(render);
