@@ -57,12 +57,12 @@ import MyReduxTest from './components/MyReduxTest'
 // render();
 // store.subscribe(render);
 
-// ReactDOM.render(<RouteSample/>,document.querySelector('#root'));
+ReactDOM.render(<RouteSample/>,document.querySelector('#root'));
 
 // 使用自己创建的store存储和管理数据
-function render() {
-    ReactDOM.render(<MyReduxTest />, document.querySelector('#root'));
-}
+// function render() {
+//     ReactDOM.render(<MyReduxTest />, document.querySelector('#root'));
+// }
 
-render();
-myStore.subscribe(render);
+// render();
+// myStore.subscribe(render);

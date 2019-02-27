@@ -14,13 +14,18 @@ export default (state = initialState, { type, payload }) => {
 }
 
 
-function login() {
-  return (dispatch) => {
-    // mock一个异步登录
-    setTimeout(() => {
-      dispatch({ type: 'login' })
-    }, 1000)
-  }
+// function login() {
+//   return (dispatch) => {
+//     // mock一个异步登录
+//     setTimeout(() => {
+//       dispatch({ type: 'login' })
+//     }, 1000)
+//   }
+// }
+
+//for saga
+function login(){
+  return {type:'login_request'}
 }
 
 export { login }
