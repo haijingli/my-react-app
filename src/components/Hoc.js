@@ -20,6 +20,7 @@ import React, { Component } from 'react'
 
 // 2.重写组件生命周期，返回class组件的写法
 const withName = (Comp) => {
+    console.log(Comp.name + '==withName');
     class GetTitle extends Component {
         constructor(props) {
             super(props)
@@ -30,7 +31,7 @@ const withName = (Comp) => {
         }
 
         componentDidMount() {
-            console.log(Comp.name + "已挂载");
+            //console.log(Comp.name + "已挂载");
 
             this.setState({ myTitle: '我的博客' })
         }
@@ -42,25 +43,41 @@ const withName = (Comp) => {
 }
 
 const withLog = Comp => {
-    console.log(Comp.name + '渲染了');
+    console.log(Comp.name + '渲染了withLog');
     return (props) => <Comp {...props} />
 
 }
 
+const withComment = (Comp) => {
+    console.log(Comp.name + '渲染了withComment');
+    class Comment extends Component {
+        componentDidMount(){
+            //console.log(Comp.name + '渲染了Comment');
+        }
+        render() {
+            return <Comp {...this.props} comment="我的评论"></Comp>
+        }
+    }
+    
+    return Comment
+}
+
 // 装饰器只能用于class
+
+@withComment
 @withLog
 @withName
-@withLog
 class ShowDetail extends Component {
     render() {
         return (
             <div>
                 <h1>{this.props.title}</h1>
                 <p>{this.props.contents}</p>
+                <p>{this.props.comment}</p>
             </div>
         )
     }
 }
 
-// export default withLog(withName(ShowDetail));
+// export default withComment(withLog(withName(ShowDetail)));
 export default ShowDetail;

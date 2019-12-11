@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import App from './App'
-import Lifecycle from './Lifecycle';
-import CartSample from './CartSample';
-import CommentList from './components/CommentList';
+// import App from './App'
+// import Lifecycle from './Lifecycle';
+// import CartSample from './CartSample';
+// import CommentList from './components/CommentList';
 import Composition from './components/Composition';
-import Hoc from './components/Hoc';
-import ContextSample from './components/ContextSample';
-import AntdForm from './components/AntdForm';
-import KFormSample from './components/KFormSample';
-import store from './store';
-import ReduxTest from './components/ReduxTest';
-import {Provider} from 'react-redux'
-import RouteSample from './components/RouteSample';
+// import Hoc from './components/Hoc';
+// import ContextSample from './components/ContextSample';
+// import AntdForm from './components/AntdForm';
+// import KFormSample from './components/KFormSample';
+// import store from './store';
+// import ReduxTest from './components/ReduxTest';
+// import {Provider} from 'react-redux'
+// import RouteSample from './components/RouteSample';
 
-import myStore from './store/myStore'
-import MyReduxTest from './components/MyReduxTest'
+// import myStore from './store/myStore'
+// import MyReduxTest from './components/MyReduxTest'
 
 
 //ReactDOM.render方法会替换之前的内容
@@ -25,7 +25,7 @@ import MyReduxTest from './components/MyReduxTest'
 //  ReactDOM.render(<CartSample title="我的商品列表"/>,document.querySelector('#root'));
 
 // ReactDOM.render(<CommentList />,document.querySelector('#root'));
-// ReactDOM.render(<Composition />,document.querySelector('#root'));
+ReactDOM.render(<Composition />,document.querySelector('#root'));
 // ReactDOM.render(<Hoc contents="My fist Blog!"/>,document.querySelector('#root'));
 // ReactDOM.render(<ContextSample/>,document.querySelector('#root'));
 // ReactDOM.render(<AntdForm/>,document.querySelector('#root'));
@@ -57,7 +57,7 @@ import MyReduxTest from './components/MyReduxTest'
 // render();
 // store.subscribe(render);
 
-ReactDOM.render(<RouteSample/>,document.querySelector('#root'));
+// ReactDOM.render(<RouteSample/>,document.querySelector('#root'));
 
 // 使用自己创建的store存储和管理数据
 // function render() {

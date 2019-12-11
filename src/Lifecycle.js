@@ -38,7 +38,7 @@ class Lifecycle extends Component {
                     return true;
                 } 
             })
-        }, 5000);
+        }, 10000);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -97,7 +97,7 @@ export default class extends Component {
             this.setState({
                 someValue: 'change value'
             })
-        }, 2000);
+        }, 5000);
     }
 
     render() {

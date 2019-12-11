@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 function Dialog(props) {
     return (
-        <div style={{ border: `2px solid ${props.color || 'red'}` }}>
+        <div style={{ border: `2px solid ${props.color || 'red'}`,width:300 }}>
             {/* 相当于vue中匿名插槽 */}
             {props.children}
             {/* 相当于vue中具名插槽 */}
@@ -13,12 +13,23 @@ function Dialog(props) {
 
 function WelcomDialog(props) {
     //jsx
-    const button = <button onClick={() => alert("我是footer")}>确定</button>
+    const button = <button onClick={() => alert("确定要离开我了吗？")}>确定</button>
     return (
         <div>
             <Dialog color="green" footer={button}>
-                <h1>react is very good!</h1>
-                <p>I konw</p>
+                <h1>我是欢迎对话框!</h1>
+            </Dialog>
+        </div>
+    )
+}
+
+function AlertDialog(props) {
+    //jsx
+    const button = <button onClick={() => alert("我是警告对话框！")}>确定</button>
+    return (
+        <div>
+            <Dialog color="red" footer={button}>
+                <h1>我是警告提示框!</h1>
             </Dialog>
         </div>
     )
@@ -75,6 +86,7 @@ export default class Composition extends Component {
         return (
             <div>
                 <WelcomDialog />
+                <AlertDialog />
                 {/* Fetcher 相当于封装了后台查询请求，传入要调用的方法(getUser)，
                 嵌套的内容是个回调函数，该函数接收返回的查询结果并展示 */}
                 <Fetcher name="getUser">

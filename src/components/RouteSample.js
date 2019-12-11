@@ -30,7 +30,7 @@ function App() {
                 <Route path="/detail/:course" component={Detail} />
                 <Route path="/login" component={Login} />
                 {/* 用于匹配没有匹配上路由的链接，默认路由，
-                问题是其他匹配上的路由也会进行保护匹配，解决方法是使用<Switch>对路由进行封装 */}
+                问题是其他匹配上的路由也会进行包含匹配，解决方法是使用<Switch>对路由进行封装 */}
                 <Route component={NoMatch} />
             </Switch>
         </div>
